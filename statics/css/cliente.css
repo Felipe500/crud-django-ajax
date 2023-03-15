@@ -1,0 +1,109 @@
+body{
+    background: #500482;
+}
+.flex-shrink-0 {
+    flex-shrink: 0 !important;
+    background: #4f0482;
+}
+.header_text{
+    text-align: center;
+}
+.nav-tabs .nav-link.active{
+    color: #6201ff;
+}
+.nav-tabs .nav-link{
+    color: white;
+}
+
+.actions_form{
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width: 50%;
+}
+
+.actions_form button{
+    width: 100%
+}
+
+tabs_client li button[aria-selected="true"]{
+    background-color: #42DCA3;
+}
+#container_page{
+    padding-top: 1.2rem;
+    background: #591dfba3;
+    color: white;
+    border-radius: 19px;
+    border-color: red;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    min-height: 17rem;
+}
+
+#container_page .row .col-12 .header_text{
+     text-align: center;
+}
+
+#nav_header{
+    padding-left: 0;
+    text-align: center;
+}
+#head_column_table tr, th{
+	padding: 8px;
+	background: #e8f3fd;
+}
+
+#page_itens{
+    padding-top: 1.2rem;
+    background: #7f7fb58c;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+#page_itens form .col-md-6 .choices{
+    color: black;
+}
+
+#line_table tr td {
+	border: 1px solid #b4dde178;
+	padding: 8px;
+	background: #c0d0e1;
+	text-decoration: none;
+}
+#line_table tr td a{
+	text-decoration: none;
+}
+
+#line_table tr td .actions_table{
+	color: #ec2a2a;
+}
+
+#edit_btn{
+    color: #fdb60d;
+    margin-right: 8px;
+    font-size: 18px;
+}
+#delete_btn{
+    color: red;
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+
+@media screen and (max-width: 450px) {
+    .actions_form{
+        width: 100%;
+    }
+    #edit_btn{
+        color: #fdb60d;
+        margin-right: 3px;
+        font-size: 15px;
+    }
+    #delete_btn{
+        color: red;
+        margin-left: 3px;
+        font-size: 15px;
+    }
+
+}
