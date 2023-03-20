@@ -92,9 +92,14 @@ class ClientListAjax(ListView):
     def get_queryset(self):
         query = self.request.GET.get('query', None)
         if query:
-            return self.model.filter(
-                Q(name__unaccent__icontains=query) | Q(surname__unaccent__icontains=query)
-            )
+            try:
+                return self.model.filter(
+                    Q(name__unaccent__icontains=query) | Q(surname__unaccent__icontains=query)
+                )
+            except:
+                return self.model.filter(
+                    Q(name__icontains=query) | Q(surname__icontains=query)
+                )
         return self.model
 
     def get_context_data(self, **kwargs):
