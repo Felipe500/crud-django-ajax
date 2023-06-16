@@ -46,40 +46,7 @@ class ViewDeleteClient(View):
         })
 
 
-class CreateClient(View):
-    def post(self,  *args, **kwargs):
-        form = ClientForm(self.request.POST or None, self.request.FILES or None)
-        if form.is_valid():
-            form = form.save(commit=False)
-            form.save()
-            return JsonResponse({'created': 'True'})
-        return render(self.request, 'views_ajax/form_client.html', {
-            'form': form,
-            'id_client': 0,
-            'name_client': 'novo cliente',
-        })
 
-
-class UpdateClient(View):
-    def post(self,  *args, **kwargs):
-        cliente = Client.objects.get_queryset().get(id=kwargs['id'])
-        form = ClientForm(self.request.POST or None, self.request.FILES or None, instance=cliente)
-
-        if form.is_valid():
-            form = form.save(commit=False)
-            form.save()
-            return JsonResponse({'updated': 'True'})
-        return render(self.request, 'views_ajax/form_client.html', {
-            'form': form,
-            'id_client': cliente.id,
-            'name_client': cliente.full_name
-        })
-
-
-class DeleteClient(View):
-    def post(self,  *args, **kwargs):
-        Client.objects.get_queryset().get(id=kwargs['id']).delete()
-        return JsonResponse({'deleted': True})
 
 
 class ClientListAjax(ListView):
