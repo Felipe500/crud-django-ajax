@@ -4,7 +4,7 @@ ENV_FOLDER=venv
 
 echo "### PROJECT 1 ###"
 echo "ENTER FOLDER PROJECT"
-cd $BASE && . ../$ENV_FOLDER/bin/activate
+cd $BASE && . $ENV_FOLDER/bin/activate
 
 echo "### Pip install ###"
 pip install -r requeriments-prod.txt
