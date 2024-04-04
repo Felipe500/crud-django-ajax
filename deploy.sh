@@ -7,7 +7,7 @@ echo "ENTER FOLDER PROJECT"
 cd $BASE && . ../$ENV_FOLDER/bin/activate
 
 echo "### Pip install ###"
-poetry install --no-root
+pip install -r requeriments-prod.txt
 
 echo "### Django check ###"
 python manage.py check --settings=config.settings.production
