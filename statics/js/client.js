@@ -82,7 +82,7 @@ function view_client(id_client){
 function view_update_client(id_client, name_client){
     $.ajax({
         type: 'GET',
-        url: '/view_update_client/'+id_client+'/',
+        url: '/update/'+id_client+'/',
         data: {},
         success: function(data){
             $('#title_modal').empty();
@@ -148,7 +148,7 @@ function delete_client(id){
 function view_create_client(){
     $.ajax({
         type: 'GET',
-        url: '/view_create_client/',
+        url: '/create/',
         data: {},
         success: function(data){
             $('#title_modal').empty();
