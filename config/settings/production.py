@@ -23,3 +23,39 @@ STATICFILES_STORAGE = 'config.storage_backends.StaticStorage'
 PUBLIC_MEDIA_LOCATION = 'media'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 DEFAULT_FILE_STORAGE = 'config.storage_backends.PublicMediaStorage'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(asctime)s: %(levelname)s - %(name)s (%(module)s.py).  %(message)s',
+        }
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'formatter': 'verbose',
+            'filename': '/root/logs/crud-django/debug.log',
+            'backupCount': 10,
+            'maxBytes': 5242880,  # 5*1024*1024 bytes (5MB)
+        },
+    },
+    'loggers': {
+        'django.server': {
+            'handlers': ['file'],
+            'level': 'INFO',
+        },
+        'django.request': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.template': {
+            'handlers': ['file'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    },
+}
