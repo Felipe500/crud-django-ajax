@@ -40,7 +40,7 @@ function view_delete_client(id_client, name_client){
 
     $.ajax({
         type: 'GET',
-        url: '/view_delete_client/'+id_client+'/',
+        url: '/delete/'+id_client+'/',
         data: {},
         success: function(data){
             $('#title_modal').empty();
